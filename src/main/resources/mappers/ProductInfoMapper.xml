@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qwb.takeout.dao.ProductInfoMapper">
+  <resultMap id="BaseResultMap" type="com.qwb.takeout.model.entity.ProductInfo">
+    <constructor>
+      <idArg column="product_id" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_name" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_price" javaType="java.math.BigDecimal" jdbcType="DECIMAL" />
+      <arg column="product_stock" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="product_description" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_icon" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="product_status" javaType="java.lang.Byte" jdbcType="TINYINT" />
+      <arg column="category_type" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+      <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
+    </constructor>
+  </resultMap>
+
+</mapper>
