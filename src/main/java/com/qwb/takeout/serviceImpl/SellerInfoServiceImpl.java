@@ -18,4 +18,24 @@ public class SellerInfoServiceImpl implements SellerInfoService {
     public List<SellerInfo> findAllList() {
         return sellerInfoMapper.findAllList();
     }
+
+    @Override
+    public SellerInfo findOneById(Long id) {
+        return sellerInfoMapper.findOneById(id);
+    }
+
+    @Override
+    public int addSeller(SellerInfo sellerInfo) {
+        return sellerInfoMapper.addSeller(sellerInfo);
+    }
+
+    @Override
+    public int updateSeller(SellerInfo sellerInfo) {
+        return sellerInfoMapper.updateSeller(sellerInfo);
+    }
+
+    @Override
+    public int deleteSeller(Long id) {
+        return sellerInfoMapper.deleteSellerById(id);
+    }
 }

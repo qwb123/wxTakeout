@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class SellerInfo implements Serializable {
-    private String id;
+    private Long id;
 
     private String username;
 
@@ -18,7 +18,7 @@ public class SellerInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public SellerInfo(String id, String username, String password, String openid, Date createTime, Date updateTime) {
+    public SellerInfo(Long id, String username, String password, String openid, Date createTime, Date updateTime) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -27,16 +27,16 @@ public class SellerInfo implements Serializable {
         this.updateTime = updateTime;
     }
 
-    public SellerInfo() {
+    public SellerInfo(){
         super();
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -44,7 +44,7 @@ public class SellerInfo implements Serializable {
     }
 
     public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+        this.username = username;
     }
 
     public String getPassword() {
@@ -52,7 +52,7 @@ public class SellerInfo implements Serializable {
     }
 
     public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
+        this.password = password;
     }
 
     public String getOpenid() {
@@ -60,7 +60,7 @@ public class SellerInfo implements Serializable {
     }
 
     public void setOpenid(String openid) {
-        this.openid = openid == null ? null : openid.trim();
+        this.openid = openid;
     }
 
     public Date getCreateTime() {
@@ -77,5 +77,9 @@ public class SellerInfo implements Serializable {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 }

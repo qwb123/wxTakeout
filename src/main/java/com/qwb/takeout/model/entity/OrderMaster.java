@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class OrderMaster implements Serializable {
-    private String orderId;
+    private Long orderId;
 
     private String buyerName;
 
@@ -27,7 +27,7 @@ public class OrderMaster implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public OrderMaster(String orderId, String buyerName, String buyerPhone, String buyerAddress, String buyerOpenid, BigDecimal orderAmount, Byte orderStatus, Byte payStatus, Date createTime, Date updateTime) {
+    public OrderMaster(Long orderId, String buyerName, String buyerPhone, String buyerAddress, String buyerOpenid, BigDecimal orderAmount, Byte orderStatus, Byte payStatus, Date createTime, Date updateTime) {
         this.orderId = orderId;
         this.buyerName = buyerName;
         this.buyerPhone = buyerPhone;
@@ -40,16 +40,12 @@ public class OrderMaster implements Serializable {
         this.updateTime = updateTime;
     }
 
-    public OrderMaster() {
-        super();
-    }
-
-    public String getOrderId() {
+    public Long getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(String orderId) {
-        this.orderId = orderId == null ? null : orderId.trim();
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
     }
 
     public String getBuyerName() {
@@ -57,7 +53,7 @@ public class OrderMaster implements Serializable {
     }
 
     public void setBuyerName(String buyerName) {
-        this.buyerName = buyerName == null ? null : buyerName.trim();
+        this.buyerName = buyerName;
     }
 
     public String getBuyerPhone() {
@@ -65,7 +61,7 @@ public class OrderMaster implements Serializable {
     }
 
     public void setBuyerPhone(String buyerPhone) {
-        this.buyerPhone = buyerPhone == null ? null : buyerPhone.trim();
+        this.buyerPhone = buyerPhone;
     }
 
     public String getBuyerAddress() {
@@ -73,7 +69,7 @@ public class OrderMaster implements Serializable {
     }
 
     public void setBuyerAddress(String buyerAddress) {
-        this.buyerAddress = buyerAddress == null ? null : buyerAddress.trim();
+        this.buyerAddress = buyerAddress;
     }
 
     public String getBuyerOpenid() {
@@ -81,7 +77,7 @@ public class OrderMaster implements Serializable {
     }
 
     public void setBuyerOpenid(String buyerOpenid) {
-        this.buyerOpenid = buyerOpenid == null ? null : buyerOpenid.trim();
+        this.buyerOpenid = buyerOpenid;
     }
 
     public BigDecimal getOrderAmount() {
@@ -122,5 +118,9 @@ public class OrderMaster implements Serializable {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 }

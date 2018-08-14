@@ -10,5 +10,8 @@
       <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
     </constructor>
   </resultMap>
+    <select id="findAllCategory" resultMap="BaseResultMap">
+      SELECT * from product_category
+    </select>
 
 </mapper>

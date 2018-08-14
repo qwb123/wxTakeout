@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class OrderDetail implements Serializable {
-    private String detailId;
+    private Long detailId;
 
     private String orderId;
 
@@ -25,7 +25,7 @@ public class OrderDetail implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public OrderDetail(String detailId, String orderId, String productId, String productName, BigDecimal productPrice, Integer productQuantity, String productIcon, Date createTime, Date updateTime) {
+    public OrderDetail(Long detailId, String orderId, String productId, String productName, BigDecimal productPrice, Integer productQuantity, String productIcon, Date createTime, Date updateTime) {
         this.detailId = detailId;
         this.orderId = orderId;
         this.productId = productId;
@@ -41,12 +41,12 @@ public class OrderDetail implements Serializable {
         super();
     }
 
-    public String getDetailId() {
+    public Long getDetailId() {
         return detailId;
     }
 
-    public void setDetailId(String detailId) {
-        this.detailId = detailId == null ? null : detailId.trim();
+    public void setDetailId(Long detailId) {
+        this.detailId = detailId;
     }
 
     public String getOrderId() {
@@ -54,7 +54,7 @@ public class OrderDetail implements Serializable {
     }
 
     public void setOrderId(String orderId) {
-        this.orderId = orderId == null ? null : orderId.trim();
+        this.orderId = orderId;
     }
 
     public String getProductId() {
@@ -62,7 +62,7 @@ public class OrderDetail implements Serializable {
     }
 
     public void setProductId(String productId) {
-        this.productId = productId == null ? null : productId.trim();
+        this.productId = productId;
     }
 
     public String getProductName() {
@@ -70,7 +70,7 @@ public class OrderDetail implements Serializable {
     }
 
     public void setProductName(String productName) {
-        this.productName = productName == null ? null : productName.trim();
+        this.productName = productName;
     }
 
     public BigDecimal getProductPrice() {
@@ -94,7 +94,7 @@ public class OrderDetail implements Serializable {
     }
 
     public void setProductIcon(String productIcon) {
-        this.productIcon = productIcon == null ? null : productIcon.trim();
+        this.productIcon = productIcon;
     }
 
     public Date getCreateTime() {
@@ -111,5 +111,9 @@ public class OrderDetail implements Serializable {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 }

@@ -1,20 +1,26 @@
 package com.qwb.takeout.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.stereotype.Repository;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+
 public class ProductInfo implements Serializable {
-    private String productId;
 
+    @JsonProperty("id")
+    private Long productId;
+    @JsonProperty("name")
     private String productName;
-
+    @JsonProperty("price")
     private BigDecimal productPrice;
 
     private Integer productStock;
-
+    @JsonProperty("description")
     private String productDescription;
-
+    @JsonProperty("icon")
     private String productIcon;
 
     private Byte productStatus;
@@ -27,7 +33,7 @@ public class ProductInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public ProductInfo(String productId, String productName, BigDecimal productPrice, Integer productStock, String productDescription, String productIcon, Byte productStatus, Integer categoryType, Date createTime, Date updateTime) {
+    public ProductInfo(Long productId, String productName, BigDecimal productPrice, Integer productStock, String productDescription, String productIcon, Byte productStatus, Integer categoryType, Date createTime, Date updateTime) {
         this.productId = productId;
         this.productName = productName;
         this.productPrice = productPrice;
@@ -44,12 +50,12 @@ public class ProductInfo implements Serializable {
         super();
     }
 
-    public String getProductId() {
+    public long getProductId() {
         return productId;
     }
 
-    public void setProductId(String productId) {
-        this.productId = productId == null ? null : productId.trim();
+    public void setProductId(long productId) {
+        this.productId = productId;
     }
 
     public String getProductName() {
@@ -57,7 +63,7 @@ public class ProductInfo implements Serializable {
     }
 
     public void setProductName(String productName) {
-        this.productName = productName == null ? null : productName.trim();
+        this.productName = productName;
     }
 
     public BigDecimal getProductPrice() {
@@ -81,7 +87,7 @@ public class ProductInfo implements Serializable {
     }
 
     public void setProductDescription(String productDescription) {
-        this.productDescription = productDescription == null ? null : productDescription.trim();
+        this.productDescription = productDescription;
     }
 
     public String getProductIcon() {
@@ -89,7 +95,7 @@ public class ProductInfo implements Serializable {
     }
 
     public void setProductIcon(String productIcon) {
-        this.productIcon = productIcon == null ? null : productIcon.trim();
+        this.productIcon = productIcon;
     }
 
     public Byte getProductStatus() {
@@ -122,5 +128,14 @@ public class ProductInfo implements Serializable {
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductInfo{" + "productId=" + productId + ", productName='" + productName + '\'' + ", productPrice=" + productPrice + ", productStock=" + productStock + ", productDescription='" + productDescription + '\'' + ", productIcon='" + productIcon + '\'' + ", productStatus=" + productStatus + ", categoryType=" + categoryType + ", createTime=" + createTime + ", updateTime=" + updateTime + '}';
     }
 }
