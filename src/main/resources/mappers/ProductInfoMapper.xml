@@ -29,7 +29,7 @@
   </resultMap>
 
   <select id="findOneById" resultMap="BaseResultMap">
-      select * from product_info where id = #{id}
+      select * from product_info where product_id = #{id}
   </select>
 
   <select id="findAll" resultMap="BaseResultMap">
@@ -48,5 +48,14 @@
      (product_name,product_price,product_stock,product_description,product_icon,product_status,category_type)
      value (#{productName},#{productPrice},#{productStock},#{productDescription},#{productIcon},#{productStatus},#{categoryType})
   </insert>
+
+  <update id="updateProduct" parameterType="com.qwb.takeout.model.entity.ProductInfo">
+    <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="productId">
+      select LAST_INSERT_ID()
+    </selectKey>
+    UPDATE product_info
+    set product_name = #{productName},product_price = #{productPrice},product_stock = #{productStock},product_description = #{productDescription},product_icon = #{productIcon},product_status = #{productStatus},category_type = #{categoryType}
+    where product_id =#{productId}
+  </update>
 
 </mapper>

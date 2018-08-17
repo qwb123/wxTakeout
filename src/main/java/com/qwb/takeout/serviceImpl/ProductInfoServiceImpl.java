@@ -18,4 +18,14 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     public List<ProductInfo> findAllProduct() {
         return productInfoMapper.findAll();
     }
+
+    @Override
+    public ProductInfo findOneById(Long id) {
+        return productInfoMapper.findOneById(id);
+    }
+
+    @Override
+    public int updateProductInfo(ProductInfo productInfo) {
+        return productInfoMapper.updateProduct(productInfo);
+    }
 }

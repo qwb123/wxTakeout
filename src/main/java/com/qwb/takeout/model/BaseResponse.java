@@ -27,8 +27,13 @@ public class BaseResponse<T> implements Serializable {
     }
 
     public static <T> BaseResponse<T> success(T data){
-        return new BaseResponse<T>(1,"1",data);
+        return new BaseResponse<T>(1,"SUCCESS",data);
     }
+
+    public static <T> BaseResponse<T> error(T data){
+        return new BaseResponse<T>(0,"内部错误",data);
+    }
+
 
     public static <T> BaseResponse<T> error(T data, String msg){
         return new BaseResponse<T>(0,msg,data);

@@ -35,7 +35,7 @@ public class ProductController {
      * @return
      */
     @GetMapping("/buyer/product/list")
-    @JsonFilter(type = ProductInfo.class,include = {"id","name","price","description","icon"})
+    @JsonFilter(type = ProductInfo.class,include = {"id","name","price","description","inco"})
     public
     @ResponseBody
     BaseResponse<List<BuyerProductListVo>> buyerProductList(){

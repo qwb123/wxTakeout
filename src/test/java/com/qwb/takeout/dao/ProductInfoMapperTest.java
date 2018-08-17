@@ -19,7 +19,7 @@ public class ProductInfoMapperTest extends TakeoutApplicationTests {
 
     @Test
     public void findOneByIdTest(){
-
+        Assert.assertNotEquals(0,productInfoMapper.findOneById(1423113435324L));
     }
 
     @Test

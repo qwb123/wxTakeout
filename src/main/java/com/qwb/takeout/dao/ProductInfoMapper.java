@@ -36,4 +36,11 @@ public interface ProductInfoMapper {
      */
     int saveProduct(ProductInfo productInfo);
 
+    /**
+     * 更新商品详情
+     * @return
+     */
+
+    int updateProduct(ProductInfo productInfo);
+
 }

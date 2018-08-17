@@ -11,4 +11,8 @@ public interface ProductInfoService {
 
     List<ProductInfo> findAllProduct();
 
+    ProductInfo findOneById(Long id);
+
+    int updateProductInfo(ProductInfo productInfo);
+
 }

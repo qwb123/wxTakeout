@@ -40,6 +40,9 @@ public class OrderMaster implements Serializable {
         this.updateTime = updateTime;
     }
 
+    public OrderMaster() {
+    }
+
     public Long getOrderId() {
         return orderId;
     }

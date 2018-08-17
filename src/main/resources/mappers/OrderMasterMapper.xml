@@ -3,7 +3,7 @@
 <mapper namespace="com.qwb.takeout.dao.OrderMasterMapper">
   <resultMap id="BaseResultMap" type="com.qwb.takeout.model.entity.OrderMaster">
     <constructor>
-      <idArg column="order_id" javaType="java.lang.Long" jdbcType="VARCHAR" />
+      <idArg column="order_id" javaType="java.lang.Long" jdbcType="BIGINT" />
       <arg column="buyer_name" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="buyer_phone" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="buyer_address" javaType="java.lang.String" jdbcType="VARCHAR" />
@@ -15,5 +15,28 @@
       <arg column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP" />
     </constructor>
   </resultMap>
+    <insert id="addOrderMaster">
+      <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="orderId">
+        SELECT  LAST_INSERT_ID()
+      </selectKey>
+        insert into order_master (buyer_name,buyer_phone,buyer_address,buyer_openid,order_amount,order_status,pay_status)
+        value (#{buyerName},#{buyerPhone},#{buyerAddress},#{buyerOpenid},#{orderAmount},#{orderStatus},#{payStatus})
+    </insert>
+  <delete id="deleteOrderMasterById">
+    delete from order_master where order_id = #{id}
+  </delete>
+  <update id="cancelOrderMaster">
+    update order_master set order_status = 0 where order_id = #{orderId}
+  </update>
+  <select id="findOrderMasterList" resultMap="BaseResultMap">
+    SELECT * from order_master
+    </select>
+    <select id="findOrderMasterListByOpenid" resultMap="BaseResultMap">
+    SELECT * from order_master where buyer_openid = #{buyerOpenId}
+    </select>
+  <select id="findOrderMasterById" resultMap="BaseResultMap">
+    SELECT * from order_master where order_id = #{orderId}
+  </select>
+
 
 </mapper>
