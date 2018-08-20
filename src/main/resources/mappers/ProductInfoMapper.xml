@@ -50,9 +50,6 @@
   </insert>
 
   <update id="updateProduct" parameterType="com.qwb.takeout.model.entity.ProductInfo">
-    <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="productId">
-      select LAST_INSERT_ID()
-    </selectKey>
     UPDATE product_info
     set product_name = #{productName},product_price = #{productPrice},product_stock = #{productStock},product_description = #{productDescription},product_icon = #{productIcon},product_status = #{productStatus},category_type = #{categoryType}
     where product_id =#{productId}

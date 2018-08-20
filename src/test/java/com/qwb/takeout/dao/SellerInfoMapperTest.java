@@ -20,8 +20,7 @@ public class SellerInfoMapperTest extends TakeoutApplicationTests {
     }
 
     @Test
-    public void findOneByIdTest(){
-        Assert.assertNotEquals(null,sellerInfoMapper.findOneById(1));
+    public void findOneByIdTest(){ Assert.assertNotEquals(null,sellerInfoMapper.findOneById(1));
     }
 
     @Test

@@ -1,6 +1,7 @@
 package com.qwb.takeout.dao;
 
 import com.qwb.takeout.model.entity.OrderMaster;
+import com.qwb.takeout.model.vo.OrderListVo;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,5 +20,7 @@ public interface OrderMasterMapper {
     int deleteOrderMasterById(String id);
 
     int cancelOrderMaster(String orderId);
+
+    OrderListVo findOrder(String orderId);
 
 }

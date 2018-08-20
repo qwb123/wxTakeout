@@ -50,7 +50,7 @@ public class ProductInfo implements Serializable {
         super();
     }
 
-    public long getProductId() {
+    public Long getProductId() {
         return productId;
     }
 
