@@ -3,8 +3,10 @@ package com.qwb.takeout.serviceImpl;
 import com.qwb.takeout.dao.OrderDetailMapper;
 import com.qwb.takeout.dao.OrderMasterMapper;
 import com.qwb.takeout.dao.ProductInfoMapper;
+import com.qwb.takeout.enumCode.ExceptionEnum;
 import com.qwb.takeout.enumCode.OrderEnum;
 import com.qwb.takeout.enumCode.OrderPayEnum;
+import com.qwb.takeout.exception.SellException;
 import com.qwb.takeout.model.dto.OrderDto;
 import com.qwb.takeout.model.entity.OrderDetail;
 import com.qwb.takeout.model.entity.OrderMaster;
@@ -48,6 +50,9 @@ public class OrderServiceImpl implements OrderService {
         for (int i = 0 ; i<orderDto.getItems().size() ; i++){
             //1.查询商品
             ProductInfo productInfo = productInfoMapper.findOneById(orderDto.getItems().get(i).getProductId());
+            if(productInfo == null){
+                throw new SellException(ExceptionEnum.PRODUCT_NOT_EXIST);
+            }
             //2.计算总价
             count = count + orderDto.getItems().get(i).getProductQuantity()*productInfo.getProductPrice().doubleValue();
             double a =productInfo.getProductPrice().doubleValue();
@@ -57,7 +62,7 @@ public class OrderServiceImpl implements OrderService {
                 productInfoMapper.updateProduct(productInfo);
                 productInfos.add(productInfo);
             }else{          //库存不足
-                return null;
+                throw new SellException(ExceptionEnum.PRODUCT_STOCK_LACK);
             }
         }
         //4.写入订单（OrderMaster和orderDetail）
@@ -89,18 +94,19 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public OrderMaster findOrderMaster(String openid) {
-        return null;
+    public List<OrderMaster> findOrderMaster(String openid) {
+        List<OrderMaster> list = orderMasterMapper.findOrderMasterList(openid);
+        return list;
     }
 
     @Override
     public OrderListVo findOrderDetail(String orderId) {
-        return null;
+        return orderMasterMapper.findOrder(orderId);
     }
 
     @Override
     public int cancelOrder(String orderId) {
-        return 0;
+        return orderMasterMapper.cancelOrderMaster(orderId);
     }
 
     @Override
@@ -110,6 +116,6 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public int payOrder(String orderId) {
-        return 0;
+        return orderMasterMapper.payOrder(orderId);
     }
 }

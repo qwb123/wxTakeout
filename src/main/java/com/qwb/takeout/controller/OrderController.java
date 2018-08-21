@@ -2,12 +2,15 @@ package com.qwb.takeout.controller;
 
 
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.qwb.takeout.annotation.JsonFilter;
+import com.qwb.takeout.enumCode.ExceptionEnum;
+import com.qwb.takeout.exception.SellException;
 import com.qwb.takeout.model.BaseResponse;
 import com.qwb.takeout.model.dto.OrderDto;
-import com.qwb.takeout.model.entity.ProductInfo;
-import com.qwb.takeout.model.vo.CreateOrderVo;
+import com.qwb.takeout.model.entity.OrderMaster;
 import com.qwb.takeout.model.vo.OrderListVo;
 import com.qwb.takeout.service.OrderService;
 import com.qwb.takeout.service.ProductInfoService;
@@ -21,7 +24,7 @@ import org.springframework.web.bind.annotation.*;
  */
 @Controller("orderController")
 @ResponseBody
-@RequestMapping("/sell/buyer/order")
+@RequestMapping("buyer/order")
 public class OrderController {
 
     @Autowired
@@ -49,39 +52,48 @@ public class OrderController {
      */
     @JsonFilter(type = PageInfo.class , include = {"pageNum", "pageSize", "pages", "total", "list"})
     @RequestMapping(value = "/list" ,method = RequestMethod.GET)
-    public BaseResponse<PageInfo<OrderListVo>> getOrderList(@RequestParam(defaultValue = "1") Integer pageNum, @RequestParam(defaultValue = "10") Integer pageSize, String openid ){
-        return null;
+    public BaseResponse<PageInfo<OrderMaster>> getOrderList(@RequestParam(defaultValue = "1") Integer pageNum, @RequestParam(defaultValue = "10") Integer pageSize, String openid ){
+        Page<OrderMaster> page = PageHelper.startPage(pageNum,pageSize);
+        orderService.findOrderMaster(openid);
+        return BaseResponse.success(page.toPageInfo());
     }
 
     /**
      * 查询订单详情
      * @return
      */
-    @RequestMapping("detail")
-    public BaseResponse<OrderListVo> getOrderDetail(String openid,String orderId){
-
-       return null;
+    @RequestMapping(value = "detail", method = RequestMethod.POST)
+    public BaseResponse<OrderListVo> getOrderDetail(String openid ,String orderId){
+       return BaseResponse.success(orderService.findOrderDetail(orderId));
     }
 
     /**
-     * 删除订单
+     * 支付订单
      * @return
      */
-    @RequestMapping("/delete")
+    @RequestMapping(value = "/pay", method = RequestMethod.POST)
     @Transactional
-    public BaseResponse<String> deleteOrder(String openid,String orderId){
-
-       return null;
+    public BaseResponse<String> payOrder(String openid,String orderId){
+       int code = orderService.payOrder(orderId);
+       if(code == 1){
+           return BaseResponse.success("支付成功");
+       }else{
+        throw new SellException(ExceptionEnum.PRODUCT_PAY_FAIL);
+       }
     }
 
     /**
      * 取消订单
      * @return
      */
-    @RequestMapping("/cancel")
+    @RequestMapping(value = "/cancel",method = RequestMethod.POST)
     @Transactional
     public BaseResponse<String> cancelOrder(String openid,String orderId){
-
-        return null;
+        int code = orderService.cancelOrder(orderId);
+        if(code == 0){
+            throw  new SellException(ExceptionEnum.ORDER_CANCEL_FAIL);
+        }else {
+            return BaseResponse.success("成功取消");
+        }
     }
 }

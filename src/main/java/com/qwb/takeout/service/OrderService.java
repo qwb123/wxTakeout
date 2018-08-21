@@ -3,6 +3,7 @@ package com.qwb.takeout.service;
 import com.qwb.takeout.model.dto.OrderDto;
 import com.qwb.takeout.model.entity.OrderMaster;
 import com.qwb.takeout.model.vo.OrderListVo;
+import java.util.List;
 
 /**
  *订单Service
@@ -29,7 +30,7 @@ public interface OrderService {
      * @param
      * @return
      */
-    OrderMaster findOrderMaster(String openid);
+    List<OrderMaster> findOrderMaster(String openid);
 
     /**
      *查询订单详情

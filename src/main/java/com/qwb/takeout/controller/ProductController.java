@@ -20,7 +20,7 @@ import java.util.List;
  * 获取商品
  */
 
-@RequestMapping("/sell")
+@RequestMapping("/buyer/product")
 @Controller("ProductController")
 public class ProductController {
 

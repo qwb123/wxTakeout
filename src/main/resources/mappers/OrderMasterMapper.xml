@@ -25,11 +25,15 @@
         insert into order_master (buyer_name,buyer_phone,buyer_address,buyer_openid,order_amount,order_status,pay_status)
         value (#{buyerName},#{buyerPhone},#{buyerAddress},#{buyerOpenid},#{orderAmount},#{orderStatus},#{payStatus})
     </insert>
+
   <delete id="deleteOrderMasterById">
     delete from order_master where order_id = #{id}
   </delete>
   <update id="cancelOrderMaster">
     update order_master set order_status = 0 where order_id = #{orderId}
+  </update>
+  <update id="payOrder">
+    update  order_master set pay_status = 1 where order_id = #{orderId}
   </update>
   <select id="findOrderMasterList" resultMap="BaseResultMap">
     SELECT * from order_master

@@ -11,7 +11,7 @@ public interface OrderMasterMapper {
 
     int addOrderMaster(OrderMaster orderMaster);
 
-    List<OrderMaster> findOrderMasterList();
+    List<OrderMaster> findOrderMasterList(String openid);
 
     List<OrderMaster> findOrderMasterListByOpenid(String openId);
 
@@ -22,5 +22,7 @@ public interface OrderMasterMapper {
     int cancelOrderMaster(String orderId);
 
     OrderListVo findOrder(String orderId);
+
+    int payOrder(String orderId);
 
 }

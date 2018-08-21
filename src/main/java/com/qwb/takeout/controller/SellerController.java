@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.qwb.takeout.annotation.JsonFilter;
 import com.github.pagehelper.*;
 
-@RequestMapping("/seller")
+@RequestMapping("/shops")
 @Controller("SellerController")
 public class SellerController {
 
