@@ -5,14 +5,16 @@ public enum ExceptionEnum {
     PRODUCT_NOT_EXIST("商品不存在",10),
     PRODUCT_STOCK_LACK("商品库存不足",11),
     PRODUCT_PAY_FAIL("支付失败",12),
-    ORDER_CANCEL_FAIL("订单取消失败",13);
+    ORDER_CANCEL_FAIL("订单取消失败",13),
+    ORDER_ISNOT_EXIST("订单不存在",14),
+    OPENID_IS_NOT("用户不存在",15);
 
     private String msg;
-    private int cocde;
+    private int code;
 
-    ExceptionEnum(String msg, int cocde) {
+    ExceptionEnum(String msg, int code) {
         this.msg = msg;
-        this.cocde = cocde;
+        this.code = code;
     }
 
     public String getMsg() {
@@ -23,11 +25,11 @@ public enum ExceptionEnum {
         this.msg = msg;
     }
 
-    public int getCocde() {
-        return cocde;
+    public int getCode() {
+        return code;
     }
 
     public void setCocde(int cocde) {
-        this.cocde = cocde;
+        this.code = cocde;
     }
 }

@@ -8,6 +8,6 @@ public class SellException extends RuntimeException {
 
     public SellException(ExceptionEnum exceptionEnum) {
         super(exceptionEnum.getMsg());
-        this.code = exceptionEnum.getCocde();
+        this.code = exceptionEnum.getCode();
     }
 }

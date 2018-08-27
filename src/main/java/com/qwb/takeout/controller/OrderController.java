@@ -54,7 +54,7 @@ public class OrderController {
     @RequestMapping(value = "/list" ,method = RequestMethod.GET)
     public BaseResponse<PageInfo<OrderMaster>> getOrderList(@RequestParam(defaultValue = "1") Integer pageNum, @RequestParam(defaultValue = "10") Integer pageSize, String openid ){
         Page<OrderMaster> page = PageHelper.startPage(pageNum,pageSize);
-        orderService.findOrderMaster(openid);
+        orderService.findOrderMasterByOpenid(openid);
         return BaseResponse.success(page.toPageInfo());
     }
 

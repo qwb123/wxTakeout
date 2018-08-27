@@ -11,7 +11,7 @@ public interface OrderMasterMapper {
 
     int addOrderMaster(OrderMaster orderMaster);
 
-    List<OrderMaster> findOrderMasterList(String openid);
+    List<OrderMaster> findOrderMasterList();
 
     List<OrderMaster> findOrderMasterListByOpenid(String openId);
 

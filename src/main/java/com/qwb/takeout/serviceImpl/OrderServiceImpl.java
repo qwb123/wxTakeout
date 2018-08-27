@@ -93,29 +93,94 @@ public class OrderServiceImpl implements OrderService {
         return orderMaster.getOrderId().toString();
     }
 
+    /**
+     *查询订单
+     *
+     * @author SpringR
+     * @param
+     * @return
+     */
     @Override
-    public List<OrderMaster> findOrderMaster(String openid) {
-        List<OrderMaster> list = orderMasterMapper.findOrderMasterList(openid);
+    public List<OrderMaster> findOrderMaster() {
+
+        List<OrderMaster> list = orderMasterMapper.findOrderMasterList();
         return list;
     }
 
     @Override
+    public List<OrderMaster> findOrderMasterByOpenid(String openid) {
+        return orderMasterMapper.findOrderMasterListByOpenid(openid);
+    }
+
+    /**
+     *查询订单详情
+     *
+     * @author SpringR
+     * @param
+     * @return
+     */
+    @Override
     public OrderListVo findOrderDetail(String orderId) {
+        OrderMaster orderMaster = orderMasterMapper.findOrder(orderId);
+        if(orderMaster==null){
+            throw new SellException(ExceptionEnum.ORDER_ISNOT_EXIST);
+        }
         return orderMasterMapper.findOrder(orderId);
     }
 
+    /**
+     *取消订单
+     *
+     * @author SpringR
+     * @param
+     * @return
+     */
     @Override
     public int cancelOrder(String orderId) {
+        //判断订单状态
+        OrderMaster orderMaster = orderMasterMapper.findOrder(orderId);
+        if(orderMaster.getOrderStatus()==0){
+            throw new SellException(ExceptionEnum.ORDER_CANCEL_FAIL);
+        }
+        //1.订单查看商品
+        List<OrderDetail> orderDetails = orderDetailMapper.findOrderDetailByOrderId(orderId);
+        for(OrderDetail orderDetail:orderDetails){
+            ProductInfo productInfo = productInfoMapper.findOneById(Long.valueOf(orderDetail.getProductId()));
+            //2.返回库存
+            productInfo.setProductStock(productInfo.getProductStock()+orderDetail.getProductQuantity());
+            productInfoMapper.updateProduct(productInfo);
+        }
+        //3.更改订单状态
         return orderMasterMapper.cancelOrderMaster(orderId);
     }
 
+    /**
+     *完成订单
+     *
+     * @author SpringR
+     * @param
+     * @return
+     */
     @Override
     public int finishOrder(String orderId) {
         return 0;
     }
 
+    /**
+     *支付订单
+     *
+     * @author SpringR
+     * @param
+     * @return
+     */
     @Override
     public int payOrder(String orderId) {
+        //判断订单支付状态
+        OrderMaster orderMaster = orderMasterMapper.findOrder(orderId);
+        if(orderMaster.getPayStatus()==1){
+            throw new SellException(ExceptionEnum.PRODUCT_PAY_FAIL);
+        }
+        //更改订单状态
         return orderMasterMapper.payOrder(orderId);
     }
 }

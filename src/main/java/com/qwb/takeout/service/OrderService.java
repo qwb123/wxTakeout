@@ -30,7 +30,16 @@ public interface OrderService {
      * @param
      * @return
      */
-    List<OrderMaster> findOrderMaster(String openid);
+    List<OrderMaster> findOrderMaster();
+
+    /**
+     *通过openid查询订单
+     *
+     * @author SpringR
+     * @param  openid
+     * @return
+     */
+    List<OrderMaster> findOrderMasterByOpenid(String openid);
 
     /**
      *查询订单详情
@@ -67,4 +76,6 @@ public interface OrderService {
      * @return
      */
     int payOrder(String orderId);
+
+
 }

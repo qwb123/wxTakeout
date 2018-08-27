@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.qwb.takeout.annotation.JsonFilter;
 import com.github.pagehelper.*;
 
-@RequestMapping("/shops")
+@RequestMapping("/api")
 @Controller("SellerController")
 public class SellerController {
 
@@ -20,7 +20,7 @@ public class SellerController {
     private SellerInfoServiceImpl sellerInfoService;
 
     @JsonFilter(type = PageInfo.class, include = {"pageNum", "pageSize", "pages", "total", "list"})
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/seller", method = RequestMethod.GET)
     public
     @ResponseBody
      PageInfo<SellerInfo> getAllList(@RequestParam(defaultValue = "1") Integer pageNum, @RequestParam(defaultValue = "20") Integer pageSize) {
