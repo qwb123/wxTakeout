@@ -1,6 +1,6 @@
 package com.qwb.takeout.enumCode;
 
-public enum OrderPayEnum {
+public enum OrderPayEnum implements EnumCommon{
 
     NoPay("未付款",(byte)0),
     HadPay("已经付款",(byte)1);
@@ -17,6 +17,7 @@ public enum OrderPayEnum {
         return msg;
     }
 
+    @Override
     public Byte getCode() {
         return code;
     }

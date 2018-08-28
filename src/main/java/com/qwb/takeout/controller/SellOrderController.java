@@ -46,7 +46,7 @@ public class SellOrderController {
         ModelAndView modelAndView = new ModelAndView("order/list");
         Page<SellerInfo> page = PageHelper.startPage(pageNum, pageSize);
         orderService.findOrderMaster();
-        modelAndView.addObject("orderDTOPage",page.toPageInfo());
+        modelAndView.addObject("orderMasterPage",page.toPageInfo());
         return modelAndView;
     }
 
@@ -60,7 +60,16 @@ public class SellOrderController {
     @RequestMapping(value = "/order/detail",method = RequestMethod.GET)
     public ModelAndView orderDetail(String orderId){
         ModelAndView modelAndView = new ModelAndView("order/detail");
-        OrderListVo orderListVo = orderService.findOrderDetail(orderId);
+        OrderListVo orderListVo = new OrderListVo();
+        try{
+            orderListVo = orderService.findOrderDetail(orderId);
+        }catch (Exception e){
+            modelAndView.addObject("msg",e.getMessage());
+            modelAndView.addObject("url","list");
+            modelAndView.setViewName("common/error");
+            return modelAndView;
+        }
+
         modelAndView.addObject("orderDTO",orderListVo);
         return modelAndView;
     }

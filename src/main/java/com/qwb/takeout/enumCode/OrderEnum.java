@@ -1,6 +1,6 @@
 package com.qwb.takeout.enumCode;
 
-public enum OrderEnum {
+public enum OrderEnum implements EnumCommon{
     VAILD("有效订单",(byte)1),
     INVAILD("无效订单",(byte)0);
 
@@ -16,7 +16,17 @@ public enum OrderEnum {
         return msg;
     }
 
+    @Override
     public Byte getCode() {
         return code;
+    }
+
+    public static OrderEnum getOrderEnum(int code){
+        for(OrderEnum orderEnum: OrderEnum.values()){
+            if(orderEnum.getCode() == code){
+                return orderEnum;
+            }
+        }
+        return null;
     }
 }

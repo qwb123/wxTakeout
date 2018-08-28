@@ -28,15 +28,15 @@
                         </thead>
                         <tbody>
 
-                        <#list orderDTOPage.list as orderDTO>
+                        <#list orderMasterPage.list as orderDTO>
                         <tr>
                             <td>${orderDTO.orderId}</td>
                             <td>${orderDTO.buyerName}</td>
                             <td>${orderDTO.buyerPhone}</td>
                             <td>${orderDTO.buyerAddress}</td>
                             <td>${orderDTO.orderAmount}</td>
-                            <td>${orderDTO.orderStatus}</td>
-                            <td>${orderDTO.payStatus}</td>
+                            <td>${orderDTO.getOrderEnum().getMsg()}</td>
+                            <td>${orderDTO.getPayEnum().getMsg()}</td>
                             <td>${orderDTO.createTime?string('yyyy-MM-dd hh:mm:ss')}</td>
                             <td><a href="detail?orderId=${orderDTO.orderId}">详情</a></td>
                             <td>
@@ -53,24 +53,24 @@
             <#--分页-->
                 <div class="col-md-12 column">
                     <ul class="pagination pull-right">
-                    <#if orderDTOPage.pageNum lte 1>
+                    <#if orderMasterPage.pageNum lte 1>
                         <li class="disabled"><a href="#">上一页</a></li>
                     <#else>
-                        <li><a href="/seller/order/list?page=${orderDTOPage.pageNum - 1}&size=${size}">上一页</a></li>
+                        <li><a href="/sell/back/order/list?pageNum=${orderMasterPage.pageNum - 1}&pageSize=${orderMasterPage.pageSize}">上一页</a></li>
                     </#if>
 
-                    <#list 1..orderDTOPage.pages as index>
-                        <#if orderDTOPage.pageNum == index>
+                    <#list 1..orderMasterPage.pages as index>
+                        <#if orderMasterPage.pageNum == index>
                             <li class="disabled"><a href="#">${index}</a></li>
                         <#else>
-                            <li><a href="/seller/order/list?page=${index}&size=${size}">${index}</a></li>
+                            <li><a href="/sell/back/order/list?pageNum=${index}&pageSize=${orderMasterPage.pageSize}">${index}</a></li>
                         </#if>
                     </#list>
 
-                    <#if orderDTOPage.pageNum gte orderDTOPage.pages>
+                    <#if orderMasterPage.pageNum gte orderMasterPage.pages>
                         <li class="disabled"><a href="#">下一页</a></li>
                     <#else>
-                        <li><a href="/seller/order/list?page=${orderDTOPage.pageNum + 1}&size=${size}">下一页</a></li>
+                        <li><a href="/sell/back/order/list?pageNum=${orderMasterPage.pageNum + 1}&PageSize=${orderMasterPage.pageSize}">下一页</a></li>
                     </#if>
                     </ul>
                 </div>

@@ -1,5 +1,9 @@
 package com.qwb.takeout.model.entity;
 
+import com.qwb.takeout.enumCode.OrderEnum;
+import com.qwb.takeout.enumCode.OrderPayEnum;
+import com.qwb.takeout.util.EnumUtil;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -126,4 +130,10 @@ public class OrderMaster implements Serializable {
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
+
+    //public OrderEnum getOrderEnum(byte orderStatus){return OrderEnum.getOrderEnum(orderStatus);}
+
+    public OrderEnum getOrderEnum(){return EnumUtil.getEnum(Integer.valueOf(this.orderStatus),OrderEnum.class); }
+
+    public OrderPayEnum getPayEnum(){return EnumUtil.getEnum(Integer.valueOf(this.payStatus), OrderPayEnum.class); }
 }
