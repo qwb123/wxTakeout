@@ -15,4 +15,7 @@ public interface ProductInfoService {
 
     int updateProductInfo(ProductInfo productInfo);
 
+    int saveProductInfo (ProductInfo productInfo);
+
+    int changeProductStatus(int productStatus,Long productId);
 }

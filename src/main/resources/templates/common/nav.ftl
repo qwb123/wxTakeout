@@ -13,7 +13,7 @@
             <ul class="dropdown-menu" role="menu">
                 <li class="dropdown-header">操作</li>
                 <li><a href="/sell/back/product/list">列表</a></li>
-                <li><a href="/sell/back/product/index">新增</a></li>
+                <li><a href="/sell/back/product/add">新增</a></li>
             </ul>
         </li>
         <li class="dropdown open">

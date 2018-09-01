@@ -1,6 +1,7 @@
 package com.qwb.takeout.dao;
 
 import com.qwb.takeout.model.entity.ProductInfo;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -43,4 +44,12 @@ public interface ProductInfoMapper {
 
     int updateProduct(ProductInfo productInfo);
 
+    /**
+     *更改库存
+     *
+     * @author SpringR
+     * @param
+     * @return
+     */
+    int updateProductStatus(@Param("product_status") int productStatus, @Param("product_id") Long productId);
 }

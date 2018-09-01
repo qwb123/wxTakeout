@@ -28,4 +28,16 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     public int updateProductInfo(ProductInfo productInfo) {
         return productInfoMapper.updateProduct(productInfo);
     }
+
+    @Override
+    public int saveProductInfo(ProductInfo productInfo) {
+        return productInfoMapper.saveProduct(productInfo);
+    }
+
+    @Override
+    public int changeProductStatus(int productStatus, Long productId) {
+        return productInfoMapper.updateProductStatus(productStatus,productId);
+    }
+
+
 }

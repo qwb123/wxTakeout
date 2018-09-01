@@ -12,18 +12,24 @@
     <div id="page-content-wrapper">
         <div class="container">
             <div class="row clearfix">
-                <div class="col-md-4 column">
+                <div class="col-md-12 column">
                     <table class="table table-bordered">
                         <thead>
                         <tr>
                             <th>订单id</th>
                             <th>订单总金额</th>
+                            <th>姓名</th>
+                            <th>电话</th>
+                            <th>地址</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
                             <td>${orderDTO.orderId}</td>
                             <td>${orderDTO.orderAmount}</td>
+                            <td>${orderDTO.buyerName}</td>
+                            <td>${orderDTO.buyerPhone}</td>
+                            <td>${orderDTO.buyerAddress}</td>
                         </tr>
                         </tbody>
                     </table>

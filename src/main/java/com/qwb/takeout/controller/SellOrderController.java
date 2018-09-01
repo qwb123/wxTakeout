@@ -24,7 +24,7 @@ import javax.jws.WebParam;
  * @return
  */
 @Controller("backProductController")
-@RequestMapping("back")
+@RequestMapping("back/order")
 @Slf4j
 public class SellOrderController {
 
@@ -41,7 +41,7 @@ public class SellOrderController {
      * @param
      * @return
      */
-    @RequestMapping(value = "/order/list",method = RequestMethod.GET)
+    @RequestMapping(value = "/list",method = RequestMethod.GET)
     public ModelAndView orderList(@RequestParam(defaultValue = "1") Integer pageNum,@RequestParam(defaultValue = "10") Integer pageSize){
         ModelAndView modelAndView = new ModelAndView("order/list");
         Page<SellerInfo> page = PageHelper.startPage(pageNum, pageSize);
@@ -57,7 +57,7 @@ public class SellOrderController {
      * @param
      * @return
      */
-    @RequestMapping(value = "/order/detail",method = RequestMethod.GET)
+    @RequestMapping(value = "/detail",method = RequestMethod.GET)
     public ModelAndView orderDetail(String orderId){
         ModelAndView modelAndView = new ModelAndView("order/detail");
         OrderListVo orderListVo = new OrderListVo();

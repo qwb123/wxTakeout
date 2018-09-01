@@ -1,6 +1,8 @@
 package com.qwb.takeout.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.qwb.takeout.enumCode.ProductStatusEnum;
+import com.qwb.takeout.util.EnumUtil;
 import org.springframework.stereotype.Repository;
 
 import java.io.Serializable;
@@ -138,4 +140,9 @@ public class ProductInfo implements Serializable {
     public String toString() {
         return "ProductInfo{" + "productId=" + productId + ", productName='" + productName + '\'' + ", productPrice=" + productPrice + ", productStock=" + productStock + ", productDescription='" + productDescription + '\'' + ", productIcon='" + productIcon + '\'' + ", productStatus=" + productStatus + ", categoryType=" + categoryType + ", createTime=" + createTime + ", updateTime=" + updateTime + '}';
     }
+
+    public ProductStatusEnum getProductStatusEnum(){
+        return EnumUtil.getEnum(Integer.valueOf(this.productStatus),ProductStatusEnum.class);
+    }
+
 }

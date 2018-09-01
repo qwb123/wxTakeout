@@ -45,4 +45,10 @@ public class ProductInfoMapperTest extends TakeoutApplicationTests {
         productInfo.setCategoryType(3);
         Assert.assertEquals(1,productInfoMapper.saveProduct(productInfo));
     }
+
+    @Test
+    public void updateSaleStatusTest(){
+        productInfoMapper.updateProductStatus(1,Long.valueOf(8));
+    }
+
 }

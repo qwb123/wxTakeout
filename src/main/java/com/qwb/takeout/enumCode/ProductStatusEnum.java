@@ -2,7 +2,7 @@ package com.qwb.takeout.enumCode;
 
 import sun.print.DialogOwner;
 
-public enum  ProductStatusEnum {
+public enum  ProductStatusEnum implements EnumCommon{
 
     UP("上架",(byte)1),DOWN("下架",(byte)0);
 
@@ -19,7 +19,8 @@ public enum  ProductStatusEnum {
         return name;
     }
 
-    public byte getCode() {
+    @Override
+    public Byte getCode() {
         return code;
     }
 }
