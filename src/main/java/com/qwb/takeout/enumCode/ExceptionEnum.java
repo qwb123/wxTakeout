@@ -7,7 +7,9 @@ public enum ExceptionEnum {
     PRODUCT_PAY_FAIL("支付失败",12),
     ORDER_CANCEL_FAIL("订单取消失败",13),
     ORDER_ISNOT_EXIST("订单不存在",14),
-    OPENID_IS_NOT("用户不存在",15);
+    OPENID_IS_NOT("用户不存在",15),
+
+    SELLER_UNAUTHORIZED("用户未授权",20);
 
     private String msg;
     private int code;

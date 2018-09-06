@@ -13,6 +13,8 @@ public interface SellerInfoService {
 
     SellerInfo findOneById(Long id);
 
+    SellerInfo findOneByOpenid(String openid);
+
     int addSeller(SellerInfo sellerInfo);
 
     int updateSeller(SellerInfo sellerInfo);

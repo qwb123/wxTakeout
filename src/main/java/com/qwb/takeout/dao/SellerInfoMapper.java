@@ -21,6 +21,14 @@ public interface SellerInfoMapper {
     SellerInfo findOneById(long id);
 
     /**
+     * 通过商家openid查找商家
+     *
+     * @param openid 商家openid
+     * @return  获取商家信息
+     */
+    SellerInfo findOneByOpenid(String openid);
+
+    /**
      * 添加商家
      * @param sellerInfo 商家实体
      * @return

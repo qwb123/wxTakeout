@@ -22,6 +22,9 @@
     select * FROM seller_info where id = #{sellerId}
   </select>
 
+  <select id="findOneByOpenid" resultMap="BaseResultMap">
+    select * FROM seller_info where openid = #{openid}
+  </select>
 
   <insert id="addSeller">
   <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">

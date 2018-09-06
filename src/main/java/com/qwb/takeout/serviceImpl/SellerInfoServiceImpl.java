@@ -25,6 +25,11 @@ public class SellerInfoServiceImpl implements SellerInfoService {
     }
 
     @Override
+    public SellerInfo findOneByOpenid(String openid) {
+        return sellerInfoMapper.findOneByOpenid(openid);
+    }
+
+    @Override
     public int addSeller(SellerInfo sellerInfo) {
         return sellerInfoMapper.addSeller(sellerInfo);
     }
