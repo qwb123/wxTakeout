@@ -104,3 +104,101 @@
 2018-09-21 11:04:07.492  INFO 7504 --- [main] com.qwb.takeout.TakeoutApplication       : Started TakeoutApplication in 5.329 seconds (JVM running for 6.34)
 2018-09-21 11:04:44.413  INFO 6220 --- [main] com.qwb.takeout.TakeoutApplication       : Starting TakeoutApplication on DESKTOP-972JIOA with PID 6220 (C:\Users\hboxs022\wxTakeout\target\classes started by hboxs022 in C:\Users\hboxs022\wxTakeout)
 2018-09-21 11:04:44.417  INFO 6220 --- [main] com.qwb.takeout.TakeoutApplication       : The following profiles are active: prod
+2018-09-21 11:50:09.915  INFO 4992 --- [main] com.qwb.takeout.TakeoutApplication       : Starting TakeoutApplication on DESKTOP-972JIOA with PID 4992 (C:\Users\hboxs022\wxTakeout\target\classes started by hboxs022 in C:\Users\hboxs022\wxTakeout)
+2018-09-21 11:50:09.919  INFO 4992 --- [main] com.qwb.takeout.TakeoutApplication       : The following profiles are active: prod
+2018-09-21 11:50:10.003  INFO 4992 --- [main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@41294f8: startup date [Fri Sep 21 11:50:10 CST 2018]; root of context hierarchy
+2018-09-21 11:50:10.979  INFO 4992 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2018-09-21 11:50:11.424  INFO 4992 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'webMVC' of type [com.qwb.takeout.Config.WebMVC$$EnhancerBySpringCGLIB$$9d40266c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-21 11:50:11.443  INFO 4992 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$333c1d5b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-21 11:50:11.946  INFO 4992 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8083 (http)
+2018-09-21 11:50:11.971  INFO 4992 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-21 11:50:11.972  INFO 4992 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-09-21 11:50:11.977  INFO 4992 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Users\java8\jdk1.8.0_181\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\java8\jdk1.8.0_181\bin;C:\Users\java8\jdk1.8.0_181\jre\bin;%MYSQL_HOME%\bin;C:\Program Files\Git\cmd;C:\Users\hboxs022\Maven\apache-maven-3.5.4-bin\apache-maven-3.5.4\bin;C:\Users\hboxs022\apache-tomcat-7.0.90\bin;C:\Users\hboxs022\apache-tomcat-7.0.90\lib;;C:\WINDOWS\System32\OpenSSH\;C:\Users\hboxs022\AppData\Local\Microsoft\WindowsApps;;.]
+2018-09-21 11:50:12.087  INFO 4992 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-09-21 11:50:12.087  INFO 4992 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2084 ms
+2018-09-21 11:50:12.214  INFO 4992 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/sell/*]
+2018-09-21 11:50:12.215  INFO 4992 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet statViewServlet mapped to [/druid/*]
+2018-09-21 11:50:12.219  INFO 4992 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-21 11:50:12.219  INFO 4992 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-21 11:50:12.220  INFO 4992 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-21 11:50:12.220  INFO 4992 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-21 11:50:12.220  INFO 4992 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2018-09-21 11:50:12.334  INFO 4992 --- [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2018-09-21 11:50:12.883  INFO 4992 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2018-09-21 11:50:13.527  INFO 4992 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-21 11:50:13.834  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@41294f8: startup date [Fri Sep 21 11:50:10 CST 2018]; root of context hierarchy
+2018-09-21 11:50:13.909  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/buyer/order/detail],methods=[POST]}" onto public com.qwb.takeout.model.BaseResponse<com.qwb.takeout.model.vo.OrderListVo> com.qwb.takeout.controller.OrderController.getOrderDetail(java.lang.String,java.lang.String)
+2018-09-21 11:50:13.910  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/buyer/order/pay],methods=[POST]}" onto public com.qwb.takeout.model.BaseResponse<java.lang.String> com.qwb.takeout.controller.OrderController.payOrder(java.lang.String,java.lang.String)
+2018-09-21 11:50:13.911  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/buyer/order/cancel],methods=[POST]}" onto public com.qwb.takeout.model.BaseResponse<java.lang.String> com.qwb.takeout.controller.OrderController.cancelOrder(java.lang.String,java.lang.String)
+2018-09-21 11:50:13.912  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/buyer/order/create],methods=[POST]}" onto public com.qwb.takeout.model.BaseResponse<java.lang.String> com.qwb.takeout.controller.OrderController.createOrder(com.qwb.takeout.model.dto.OrderDto)
+2018-09-21 11:50:13.912  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/buyer/order/list],methods=[GET]}" onto public com.qwb.takeout.model.BaseResponse<com.github.pagehelper.PageInfo<com.qwb.takeout.model.entity.OrderMaster>> com.qwb.takeout.controller.OrderController.getOrderList(java.lang.Integer,java.lang.Integer,java.lang.String)
+2018-09-21 11:50:13.915  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/buyer/product/list],methods=[GET]}" onto public com.qwb.takeout.model.BaseResponse<java.util.List<com.qwb.takeout.model.vo.BuyerProductListVo>> com.qwb.takeout.controller.ProductController.buyerProductList()
+2018-09-21 11:50:13.917  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/api/seller],methods=[GET]}" onto public com.github.pagehelper.PageInfo<com.qwb.takeout.model.entity.SellerInfo> com.qwb.takeout.controller.SellerController.getAllList(java.lang.Integer,java.lang.Integer)
+2018-09-21 11:50:13.918  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/user/login],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.qwb.takeout.controller.SellerUserController.sellerLogin(java.lang.String,javax.servlet.http.HttpServletResponse,java.util.Map<java.lang.String, java.lang.Object>)
+2018-09-21 11:50:13.919  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/order/order/cancel],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.qwb.takeout.controller.SellOrderController.orderCancel(java.lang.String)
+2018-09-21 11:50:13.920  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/order/detail],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.qwb.takeout.controller.SellOrderController.orderDetail(java.lang.String)
+2018-09-21 11:50:13.920  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/order/list],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.qwb.takeout.controller.SellOrderController.orderList(java.lang.Integer,java.lang.Integer)
+2018-09-21 11:50:13.922  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/product/save],methods=[POST]}" onto public org.springframework.web.servlet.ModelAndView com.qwb.takeout.controller.SellProductController.saveProduct(com.qwb.takeout.model.entity.ProductInfo)
+2018-09-21 11:50:13.922  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/product/add],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.qwb.takeout.controller.SellProductController.addProduct()
+2018-09-21 11:50:13.923  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/product/off_sale],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.qwb.takeout.controller.SellProductController.offSaleProduct(java.lang.String)
+2018-09-21 11:50:13.923  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/product/on_sale],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.qwb.takeout.controller.SellProductController.onSaleProduct(java.lang.String)
+2018-09-21 11:50:13.923  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/product/list],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.qwb.takeout.controller.SellProductController.productList(java.lang.Integer,java.lang.Integer)
+2018-09-21 11:50:13.923  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/back/product/update],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView com.qwb.takeout.controller.SellProductController.updateProduct(java.lang.Long)
+2018-09-21 11:50:13.927  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-21 11:50:13.928  INFO 4992 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-21 11:50:13.989  INFO 4992 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-21 11:50:13.990  INFO 4992 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-21 11:50:14.434  INFO 4992 --- [main] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2018-09-21 11:50:14.626  INFO 4992 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-09-21 11:50:14.628  INFO 4992 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2018-09-21 11:50:14.628  INFO 4992 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-09-21 11:50:14.636  INFO 4992 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2018-09-21 11:50:14.637  INFO 4992 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2018-09-21 11:50:14.679  INFO 4992 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8083 (http) with context path ''
+2018-09-21 11:50:14.683  INFO 4992 --- [main] com.qwb.takeout.TakeoutApplication       : Started TakeoutApplication in 5.302 seconds (JVM running for 6.217)
+2018-09-21 11:50:54.284  INFO 4992 --- [http-nio-8083-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-09-21 11:50:54.284  INFO 4992 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-09-21 11:50:54.307  INFO 4992 --- [http-nio-8083-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 23 ms
+2018-09-21 11:50:54.535 DEBUG 4992 --- [http-nio-8083-exec-1] c.q.t.d.O.findOrderMasterList_COUNT      : ==>  Preparing: SELECT count(0) FROM order_master 
+2018-09-21 11:50:54.559 DEBUG 4992 --- [http-nio-8083-exec-1] c.q.t.d.O.findOrderMasterList_COUNT      : ==> Parameters: 
+2018-09-21 11:50:54.660 DEBUG 4992 --- [http-nio-8083-exec-1] c.q.t.d.O.findOrderMasterList_COUNT      : <==      Total: 1
+2018-09-21 11:50:54.663 DEBUG 4992 --- [http-nio-8083-exec-1] c.q.t.d.O.findOrderMasterList            : ==>  Preparing: SELECT * from order_master LIMIT ? 
+2018-09-21 11:50:54.664 DEBUG 4992 --- [http-nio-8083-exec-1] c.q.t.d.O.findOrderMasterList            : ==> Parameters: 10(Integer)
+2018-09-21 11:50:54.675 DEBUG 4992 --- [http-nio-8083-exec-1] c.q.t.d.O.findOrderMasterList            : <==      Total: 10
+2018-09-21 11:51:02.852 DEBUG 4992 --- [http-nio-8083-exec-5] c.q.t.d.O.findOrderMasterList_COUNT      : ==>  Preparing: SELECT count(0) FROM order_master 
+2018-09-21 11:51:02.853 DEBUG 4992 --- [http-nio-8083-exec-5] c.q.t.d.O.findOrderMasterList_COUNT      : ==> Parameters: 
+2018-09-21 11:51:02.855 DEBUG 4992 --- [http-nio-8083-exec-5] c.q.t.d.O.findOrderMasterList_COUNT      : <==      Total: 1
+2018-09-21 11:51:02.857 DEBUG 4992 --- [http-nio-8083-exec-5] c.q.t.d.O.findOrderMasterList            : ==>  Preparing: SELECT * from order_master LIMIT ? 
+2018-09-21 11:51:02.857 DEBUG 4992 --- [http-nio-8083-exec-5] c.q.t.d.O.findOrderMasterList            : ==> Parameters: 10(Integer)
+2018-09-21 11:51:02.864 DEBUG 4992 --- [http-nio-8083-exec-5] c.q.t.d.O.findOrderMasterList            : <==      Total: 10
+2018-09-21 11:51:09.978  INFO 4992 --- [http-nio-8083-exec-7] io.lettuce.core.EpollProvider            : Starting without optional epoll library
+2018-09-21 11:51:09.980  INFO 4992 --- [http-nio-8083-exec-7] io.lettuce.core.KqueueProvider           : Starting without optional kqueue library
+2018-09-21 11:51:10.173 DEBUG 4992 --- [http-nio-8083-exec-7] c.q.t.d.ProductInfoMapper.findAll_COUNT  : ==>  Preparing: SELECT count(0) FROM product_info 
+2018-09-21 11:51:10.174 DEBUG 4992 --- [http-nio-8083-exec-7] c.q.t.d.ProductInfoMapper.findAll_COUNT  : ==> Parameters: 
+2018-09-21 11:51:10.185 DEBUG 4992 --- [http-nio-8083-exec-7] c.q.t.d.ProductInfoMapper.findAll_COUNT  : <==      Total: 1
+2018-09-21 11:51:10.187 DEBUG 4992 --- [http-nio-8083-exec-7] c.q.t.dao.ProductInfoMapper.findAll      : ==>  Preparing: select * from product_info LIMIT ? 
+2018-09-21 11:51:10.187 DEBUG 4992 --- [http-nio-8083-exec-7] c.q.t.dao.ProductInfoMapper.findAll      : ==> Parameters: 5(Integer)
+2018-09-21 11:51:10.190 DEBUG 4992 --- [http-nio-8083-exec-7] c.q.t.dao.ProductInfoMapper.findAll      : <==      Total: 5
+2018-09-21 15:22:16.664  INFO 4992 --- [lettuce-nioEventLoop-4-1] io.lettuce.core.protocol.CommandHandler  : null Unexpected exception during request: java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+
+java.io.IOException: 远程主机强迫关闭了一个现有的连接。
+	at sun.nio.ch.SocketDispatcher.read0(Native Method) ~[na:1.8.0_181]
+	at sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:43) ~[na:1.8.0_181]
+	at sun.nio.ch.IOUtil.readIntoNativeBuffer(IOUtil.java:223) ~[na:1.8.0_181]
+	at sun.nio.ch.IOUtil.read(IOUtil.java:192) ~[na:1.8.0_181]
+	at sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:380) ~[na:1.8.0_181]
+	at io.netty.buffer.PooledUnsafeDirectByteBuf.setBytes(PooledUnsafeDirectByteBuf.java:288) ~[netty-buffer-4.1.27.Final.jar:4.1.27.Final]
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1108) ~[netty-buffer-4.1.27.Final.jar:4.1.27.Final]
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:345) ~[netty-transport-4.1.27.Final.jar:4.1.27.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:148) ~[netty-transport-4.1.27.Final.jar:4.1.27.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:646) [netty-transport-4.1.27.Final.jar:4.1.27.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:581) [netty-transport-4.1.27.Final.jar:4.1.27.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:498) [netty-transport-4.1.27.Final.jar:4.1.27.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:460) [netty-transport-4.1.27.Final.jar:4.1.27.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884) [netty-common-4.1.27.Final.jar:4.1.27.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) [netty-common-4.1.27.Final.jar:4.1.27.Final]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_181]
+
+2018-09-21 15:22:16.809  INFO 4992 --- [lettuce-eventExecutorLoop-1-1] i.l.core.protocol.ConnectionWatchdog     : Reconnecting, last destination was /127.0.0.1:6379
+2018-09-21 15:22:17.824  WARN 4992 --- [lettuce-nioEventLoop-4-2] i.l.core.protocol.ConnectionWatchdog     : Cannot reconnect: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: /127.0.0.1:6379
+2018-09-21 15:22:18.918  INFO 4992 --- [lettuce-nioEventLoop-4-3] i.l.core.protocol.ReconnectionHandler    : Reconnected to 127.0.0.1:6379
