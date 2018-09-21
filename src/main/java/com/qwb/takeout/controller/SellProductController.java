@@ -6,17 +6,15 @@ import com.qwb.takeout.model.entity.ProductCategory;
 import com.qwb.takeout.model.entity.ProductInfo;
 import com.qwb.takeout.service.ProductCategoryService;
 import com.qwb.takeout.service.ProductInfoService;
+import com.qwb.takeout.util.JsonUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.jws.WebParam;
-import javax.validation.Valid;
-import javax.validation.constraints.Null;
 import java.util.List;
 
 /**
@@ -36,6 +34,9 @@ public class SellProductController {
     @Autowired
     private ProductCategoryService productCategoryService;
 
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
     /**
      *商品列表
      *
@@ -47,6 +48,9 @@ public class SellProductController {
     public ModelAndView productList(@RequestParam(defaultValue = "1") Integer pageNum,@RequestParam(defaultValue = "5") Integer pageSize){
         Page<ProductInfo> page = PageHelper.startPage(pageNum,pageSize);
         List<ProductInfo> productInfoList = productInfoService.findAllProduct();
+        String productInfoListJson = null;
+        productInfoListJson = JsonUtil.objectToJson(productInfoList);
+        //stringRedisTemplate.opsForValue().set("productList",productInfoListJson,6000,TimeUnit.SECONDS);
         ModelAndView mv = new ModelAndView("/product/list");
         mv.addObject("productInfoPage",page.toPageInfo());
         return mv;
